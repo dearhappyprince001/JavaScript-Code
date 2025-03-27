@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truthy And Falsy</title>
+  </head>
+  <body>
+    <script>
+      let age; //undefined.
+      if (age) {
+        console.log("you are ready");
+      } else {
+        console.log("you are no ready");
+      }
+
+      let name = ""; //empty-String.
+      if (name) {
+        console.log("print my name");
+      } else {
+        console.log("can not print name");
+      }
+
+      let value = null; //null.
+      if (value) {
+        console.log("i can help you");
+      } else {
+        console.log("i can't help you");
+      }
+
+      let no = 5 / horse; //NaN.
+      if (no) {
+        console.log("i can print value");
+      } else {
+        console.log("i can't print value");
+      }
+    </script>
+  </body>
+</html>

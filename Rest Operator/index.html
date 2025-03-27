@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fun(a, b, ...c) {
+        console.log(`${a}`);
+        console.log(`${b}`);
+        console.log(`${a} ${b}`);
+        console.log(c);
+        console.log(c[0]);
+        console.log(c.length);
+        console.log(c.indexOf("Lionel"));
+        console.log(c.indexOf("Prem"));
+      }
+      fun("Raj", "Robin", "Lionel", "Prem", "Sam");
+
+      function sum(name, course, ...args) {
+        console.log(arguments);
+        console.log(`Hello ${name} ${course}`);
+        let sum = 0;
+        for (let i in args) {
+          sum += args[i];
+        }
+        console.log(sum);
+      }
+      sum("happy", "B.tech", 20, 30, 40);
+      sum("prince", "B.C.A", 30, 40);
+    </script>
+  </body>
+</html>

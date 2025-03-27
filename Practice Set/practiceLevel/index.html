@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #first {
+      background-color: aqua;
+      border: 2px solid yellowgreen;
+      height: 200px;
+      width: 300px;
+      padding: 3px;
+      margin: 4px;
+    }
+
+    .top {
+      background-color: aqua;
+      border: 2px solid yellowgreen;
+      height: 200px;
+      width: 300px;
+      padding: 3px;
+      margin: 4px;
+    }
+  </style>
+
+  <body>
+    <div id="first"></div>
+    <div class="top"></div>
+    <div class="top"></div>
+
+    <script>
+      let a = document.getElementById("first");
+      a.innerText = "hello i'm learning javascript";
+
+      function changeColor() {
+        //create a function.
+        a.style.backgroundColor = "red";
+      }
+      a.onclick = changeColor; //in which we can use attribute.
+      //OR
+      a.addEventListener("click", changeColor); //or we can also used eventListener.
+
+      let b = document.getElementsByClassName("top");
+      b[0].innerText = "first div"; //accessing element by index position.
+
+      b[1].innerText = "Second div"; //accessing element by index position.
+
+      let c = document.querySelectorAll(".top");
+      c[0].innerText = "i m in first div";
+      c[1].innerText = "i m in second div";
+    </script>
+  </body>
+</html>

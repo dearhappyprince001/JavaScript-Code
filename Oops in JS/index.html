@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOPS</title>
+  </head>
+  <body>
+    <script>
+      class words {
+        message() {
+          console.log("hello i am learning about the oops concept");
+        }
+
+        sorry() {
+          console.log("i m granting sorry for bothering you");
+        }
+      }
+      let obj = new words();
+      console.log(obj.message());
+      console.log(obj.sorry());
+
+      //different types of methods in a class.
+
+      class student {
+        constructor() {
+          //the constructor methods calls automatically when the object is created there is no need to calls it.
+          console.log("I am in Constructor Method");
+        }
+
+        earth() {
+          //the prototype method is need to call via object.
+          console.log("I am in prototype method");
+        }
+
+        static staticMethod() {
+          console.log("i am in static method");
+        }
+      }
+
+      let object = new student();
+
+      object.earth(); //calls prototype object via object.
+
+      //object.staticMethod();//we can not call static method via object.
+
+      student.staticMethod(); //so we can call static method via class-name not object.
+
+      //inheritance in Java Script.
+
+      class employee {
+        constructor(name) {
+          console.log("constructor : Employee" + name);
+        }
+      }
+
+      class manager extends employee {
+        constructor() {
+          super(); //call the parent class constructor.
+          console.log("constructor : Manager");
+        }
+      }
+
+      let a = new manager("Happy");
+    </script>
+  </body>
+</html>

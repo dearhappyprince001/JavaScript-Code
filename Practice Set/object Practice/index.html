@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowing All about Object</title>
+  </head>
+  <body>
+    <script>
+      let product = {
+        name: "Jeans",
+        size: "S",
+        fit: "Slim Fit",
+        "delivery-time": "Same day delivery",
+      };
+
+      let copyProduct = product;
+      console.log(product);
+      copyProduct.size = "M";
+      console.log(product);
+      copyProduct.fit = "regularFit";
+      console.log(product);
+
+      console.log(product["delivery-time"]); //use bracket notation to access this property.
+
+      let obj = {
+        message: "Good Job",
+        status: "Complete",
+      };
+      console.log(obj);
+
+      let { message, status } = obj; //Destructuring.
+      console.log(message);
+      console.log(status);
+    </script>
+  </body>
+</html>

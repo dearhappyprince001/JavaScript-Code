@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <body style="background-color: purple">
+    <h2>Amazing Images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="150px"
+            id="photoshop"
+            src="https://cdn.pixabay.com/photo/2019/11/05/16/03/man-4603859_640.jpg"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpGdu0SjxQB3UhKiNQS473_2hrkokhS5kQQ&s"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://media.istockphoto.com/id/909935748/photo/aerial-view-of-river-in-tropical-green-forest-with-mountains-in-background.jpg?s=612x612&w=0&k=20&c=vXilauHpMiPoXoZo_4CEOiacPBU8hT5KDh1fbnN_bN4="
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.unsplash.com/photo-1543549790-8b5f4a028cfb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG93bHxlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZTHLG-fi4iKysdWxo_-Ttud0jfjAv7Gkuw&s"
+            alt=""
+          />
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //1st approach inside the html tag.
+
+    //2nd approach.
+
+    document.getElementById("owl").onclick = function () {
+      alert("OWL CLICKED");
+    };
+
+    //3rd approach.
+
+    document
+      .getElementById("owl")
+      .addEventListener("click", function (eventObject) {
+        console.log(eventObject);
+      });
+
+    //event Propagation occurs in two types event-bubbling and event-capturing.
+
+    //-------------->1.Event-Bubbling.
+
+    document.getElementById("images").addEventListener(
+      "click",
+      function (eventObject) {
+        console.log("clicked inside the ul");
+      },
+      false
+    ); //false is present by default and it is called Event-Bubbling.
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (eventObject) {
+        console.log("owl Clicked");
+        eventObject.stopPropagation(); //this method stops the bubbling.
+      },
+      false
+    );
+
+    //------------------>2 Event-Capturing.
+
+    document.getElementById("images").addEventListener(
+      "click",
+      function (eventObject) {
+        console.log("clicked inside the ul");
+      },
+      true
+    ); //event-capturing by default nhi hota hai ye situation ke according programmers ko deni hoti hai.
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (eventObject) {
+        console.log("owl clicked");
+      },
+      true
+    );
+  </script>
+</html>

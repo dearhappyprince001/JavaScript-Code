@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator Functions</title>
+  </head>
+  <body>
+    <script>
+      // function generateIt() {
+      //   //it's a normal function.
+      //   console.log("first Message");
+      //   console.log("second Message");
+      //   console.log("third Message");
+      // }
+      // generateIt();
+
+      function* generateIt() {
+        //it's a generator function.
+        console.log("first Message");
+        yield "yield no 1.";
+
+        console.log("second Message");
+        yield "yield no 1.";
+
+        console.log("third Message");
+        yield "yield no 1.";
+      }
+      let g = generateIt();
+
+      console.log(g.next());
+      console.log(g.next()); //its use to remove pause or yield.
+      console.log(g.next()); //its use to remove pause or yield.
+    </script>
+  </body>
+</html>

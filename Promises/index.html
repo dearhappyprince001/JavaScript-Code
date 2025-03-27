@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //------------->promise1.
+      const promiseOne = new Promise(function (resolve, reject) {
+        //Do an async task.
+        //Databases call,cryptography,network.
+        setTimeout(function () {
+          console.log("Async task is completed");
+          resolve(); //ye method resolve ko then se connect kar dega.
+        }, 1000);
+      }); //create a promise.
+
+      promiseOne.then(function () {
+        console.log("Promise Consumed");
+      }); //consume a promise.
+
+      //-------------------->promise2 is mein promise ko variable mein store nhi kra rhe hai.
+
+      new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log("Async Task 2");
+          resolve();
+        }, 1000);
+      }).then(function () {
+        console.log("Async 2 resolved");
+      });
+
+      //----------------------------->promise3.
+      const promiseThree = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve({ username: "ammy", email: "ammy@gmail.com" }); //resolve ke andar parameters bhi dal sakte hai like object,arrays.
+        }, 1000);
+      });
+
+      promiseThree.then(function (user) {
+        console.log(user); //aur parameters ko yaha pe access kar sakte hai.
+      });
+
+      //------------------------------>promise4.
+      const promiseFour = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          let error = true;
+          if (!error) {
+            resolve({ username: "hitesh", password: "1234" });
+          } else {
+            reject("ERROR Something went wrong");
+          }
+        }, 1000);
+      });
+
+      promiseFour
+        .then((user) => {
+          console.log(user);
+          return user.username;
+        })
+        .then((username) => {
+          console.log(username);
+        })
+        .catch(function (error) {
+          console.log("error");
+        })
+        .finally(() => {
+          console.log("The promise is either resolved or rejected");
+        });
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      let complete = "true";
+
+      let prom = new Promise(function (resolve, reject) {
+        if (complete) {
+          resolve("successfully printed");
+        } else {
+          reject("failed to printed");
+        }
+      });
+
+      let onFulFillment = (result) => {
+        console.log(result);
+      };
+
+      let onRejection = (error) => {
+        console.log(error);
+      };
+
+      prom(true).then(onFulFillment);
+      prom(false).catch(onRejection);
+      // console.log(prom);
+    </script>
+  </body>
+</html>

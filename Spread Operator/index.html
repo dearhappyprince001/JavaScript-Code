@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numberOne = [1, 2, 3];
+      const numberTwo = [4, 5, 6];
+      const combinedNumbers = [...numberOne, ...numberTwo];
+      console.log(combinedNumbers);
+
+      //we can used spread operator for object cloning.
+
+      let src = {
+        age: 22,
+        wt: 60,
+        ht: 180,
+      };
+
+      let dest = { ...src };
+      console.log("SRC:", src);
+      console.log("DEST:", dest);
+
+      //we can use spread operator with objects too.
+      const myVehicle = {
+        brand: "Ford",
+        model: "Mustang",
+        color: "red",
+      };
+
+      const updateMyVehicle = {
+        type: "car",
+        year: 2021,
+        color: "yellow",
+      };
+
+      const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
+      console.log(myUpdatedVehicle);
+    </script>
+  </body>
+</html>
