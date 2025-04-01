@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+  </head>
+  <body>
+    <h2>JavaScript Event Delegation</h2>
+    <p>Click any button to see the magic...</p>
+    <div id="parent">
+      <button class="btn">Button1</button>
+      <button class="btn">Button2</button>
+      <button class="btn">Button3</button>
+      <button class="btn">Button4</button>
+      <button class="btn">Button5</button>
+      <button class="btn">Button6</button>
+      <button class="btn">Button7</button>
+      <button class="btn">Button8</button>
+      <button class="btn">Button9</button>
+      <button class="btn">Button10</button>
+    </div>
+
+    <script>
+      document.getElementById("parent").addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn")) {
+          alert(`You Clicked ${event.target.innerText}`);
+        }
+      });
+    </script>
+  </body>
+</html>
