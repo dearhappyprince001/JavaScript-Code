@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Edit and Remove Element</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>JavaScript</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+
+    //Edit the value.
+    const secondLang = document.querySelector("li:nth-child(2)");
+    console.log(secondLang);
+    secondLang.innerHTML = "Mojo";
+
+    //Remove the value.
+    const thirdLang = document.querySelector("li:nth-child(3)");
+    thirdLang.remove();
+
+    //Edit firstlang
+    const firstLang = document.querySelector("li:nth-child(1)");
+    firstLang.innerHTML = "JavaScript and TypeScript";
+    firstLang.style.color = "red";
+    firstLang.style.backgroundColor = "black";
+
+    //Remove the first lang
+    const firstLangRemove = document.querySelector("li:nth-child(1)");
+    firstLangRemove.remove();
+  </script>
+</html>

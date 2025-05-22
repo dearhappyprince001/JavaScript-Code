@@ -6,7 +6,10 @@ let student = {
   rollNo: 19,
 };
 console.log(student.marks);
-student.freeze(); //is method se hum object ki values ko change nhi kr sakte hai.
+console.log(Object.keys(student));
+console.log(Object.values(student));
+console.log(Object.entries(student)); //yeh object ki keys and values ko array mein convert kr deta hai.
+Object.freeze(student); //is method se hum object ki values ko change nhi kr sakte hai.
 
 //-------------------->create an object by literals.
 
@@ -55,6 +58,29 @@ const regularUser = {
 };
 console.log(regularUser.fullName.userFullName); //mtlb ki object ke andar object ko bhi access kar sakte hai or values ko bhi.
 
+//add two objects in one object.
+const object1 = {
+  name: "suraj",
+  age: 23,
+};
+
+const object2 = {
+  name: "kumar",
+  age: 24,
+};
+
+// const finalObject = {
+//   object1,
+//   object2,
+// };// //object1 and object2 ko ek hi object mein add kiya hai.
+
+const finalObject = Object.assign({}, object1, object2); //object1 and object2 ko ek hi object mein add kiya hai.
+console.log(finalObject); //object1 and object2 ko ek hi object mein add kiya hai.
+
+//Or by using spread operator.
+const finalObject1 = { ...object1, ...object2 }; //object1 and object2 ko ek hi object mein add kiya hai.
+console.log(finalObject1); //object1 and object2 ko ek hi object mein add kiya hai.
+
 //-------------------------------->create an object by new Keyword or constructor.
 
 const personn = new Object(); //create an object .
@@ -66,7 +92,7 @@ person.lastName = "kumar";
 person.age = 33;
 person.eyeColor = "green";
 
-console.log(personn);
+console.log(person);
 
 //-------------------------->Object-References.
 

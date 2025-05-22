@@ -63,6 +63,8 @@
 
     //3rd approach.
 
+    //eventObject is the object which is passed to the function when the event occurs.
+    //type,timeStamp, target, currentTarget, eventPhase, bubbles, cancelable, defaultPrevented.
     document
       .getElementById("owl")
       .addEventListener("click", function (eventObject) {
@@ -107,5 +109,14 @@
       },
       true
     );
+
+    document
+      .querySelector("#images")
+      .addEventListener("click", function (eventObject) {
+        console.log(eventObject.target.parentNode);
+        let removeIt = eventObject.target.parentNode;
+        removeIt.remove();
+        //remove the element from the DOM.
+      });
   </script>
 </html>

@@ -14,19 +14,25 @@
       console.log(age, name, city);
 
       //destructing
+      //array
 
       let user = ["karan", 25, "delhi"];
       let [name, age, city] = user;
       console.log(age, city, name);
 
       ///create an object
+      //object
       const person = {
         firstName: "suraj",
         lastName: "kumar",
         age: 22,
       };
       //destructuring
-      let [lastName, age, firstName] = person;
+
+      const { firstName } = person;
+      console.log(firstName); //suraj
+
+      let { firstName, lastName, age } = person;
       console.log(person);
 
       //destructuring

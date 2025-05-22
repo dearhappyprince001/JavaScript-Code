@@ -126,13 +126,25 @@ console.log(marvel_heros[3][2]); //batman.
 marvel_heros.concat(dc_heros);
 console.log(marvel_heros); //is case mein bhi array ke andar ek dusra array aa jayega.
 
+//OR
+const allHeros = marvel_heros.concat(dc_heros);
+console.log(allHeros); //is case mein dono array ki values ko ek sath mila diya.
+
+//by spread operator and this the best way instead of push and concat.
 const all_new_heros = [...marvel_heros, ...dc_heros];
 console.log(all_new_heros); //so is case mein spread operator ki help se hmne dono array ki values ko alg alg kr diya.
 
-//flat -method.
+//---------------------->flat -method.
 const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]];
 const real_array = another_array.flat(Infinity);
-console.log(real_array); //1,2,3,4,5,6,7,6,7,4,5this flat method considerd a single array from sub array.
+console.log(real_array); //1,2,3,4,5,6,7,6,7,4,5 this flat method considerd a single array from sub array.
+
+//-------------------------->Array of()
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+let score4 = 400;
+console.log(Array.of(score1, score2, score3, score4)); //Array of method.
 
 //---------------------->Every() Method.
 

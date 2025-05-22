@@ -68,4 +68,4 @@ accountEmail = "abc@gmail.com";
 accountPassword = "213432";
 accountCity = "Delhi";
 
-console.table([accountEmail, accountPassword, accountCity]); //is method se sabhi ko ek sath table ki form mein access kar sakte hai.
+console.table([accountEmail, accountPassword, accountCity]); //is method se sabhi ko ek sath table ki form mein access kar sakte hai with index no.

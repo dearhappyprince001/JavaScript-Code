@@ -76,11 +76,11 @@ switch (
 
 //unary-operator.
 
-let a = 5;
-console.log(a++); //post increment.
+let aB = 5;
+console.log(aB++); //post increment.
 
-let b = 6;
-console.log(--b); //pre decrement
+let bC = 6;
+console.log(--bC); //pre decrement
 
 // Guard-Operator.
 

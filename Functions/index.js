@@ -1,4 +1,6 @@
-//functions.
+//------------------------------->functions.
+//function is a block of code that performs a specific task.
+//function is a reusable piece of code that can be called multiple times.
 
 function sayMyName() {
   //define a function or function definition.
@@ -13,18 +15,22 @@ sayMyName(); //function-call -----> it calls the function two times of the code 
 // sayMyName();
 // sayMyName();
 
-let age = 22;
+//------------------------------------>function with parameters.
+
+let age = 22; //global variable.
 function printAge() {
-  console.log(age);
+  console.log(age); //it will print 22 because it is a global variable and we can access it outside the function also.
 }
-printAge();
+
+printAge(); // //it will print 22 because it is a global variable and we can access it outside the function also.
 
 age = 71;
-printAge();
+printAge(); // //it will print 71 because it is a global variable and we can access it outside the function also.
 
 age = 32;
-printAge();
+printAge(); // //it will print 32 because it is a global variable and we can access it outside the function also.
 
+//------------------------------>function with parameters.
 function printCounting() {
   //define a function or function definition.
   for (let i = 1; i <= 10; i++) {
@@ -34,13 +40,15 @@ function printCounting() {
 printCounting(); //call a function.
 // printCounting();
 
+//------------------------------->function with parameters.
 function loginUserMessage(userName) {
   return `${userName} just logged in`;
 }
-let storingValue = loginUserMessage("happyPrince");
+let storingValue = loginUserMessage("happyPrince"); // //function call.
 console.log(storingValue);
 
-//spread-operator.
+//----------------------------------->spread-operator.
+//spread operator is used to pass multiple arguments to a function.
 function calculateCartPrice(...num1) {
   return num1;
 }
@@ -48,6 +56,7 @@ function calculateCartPrice(...num1) {
 console.log(calculateCartPrice(300, 400, 500, 500, 700)); //but it will print only first value this problem is resolving by spread operator.
 
 //----------------------->function with object.
+
 const anyObject = {
   userName: "prince",
   price: 200,
@@ -58,6 +67,7 @@ function handleObject(anyObject) {
     `User-Name is ${anyObject.userName} and price is ${anyObject.price}`
   );
 }
+handleObject(anyObject); //function call.
 console.log(anyObject);
 
 //---------------------->function with array.
@@ -150,7 +160,7 @@ arr2.forEach((val, index, arr2) => {
   console.log(val, index, arr2);
 });
 
-//reduce method.
+//-------------------------------------->reduce method.
 
 let arr3 = [1, 2, 3, 4];
 const output = arr3.reduce((acc, curr) => {
@@ -171,10 +181,13 @@ function mySecond() {
 mySecond();
 myFirst();
 
-//setTimeOut and setInterval method
+//------------------------------>setTimeOut and setInterval method
 
 function hello() {
   console.log("hello guys");
 }
+//setTimeout and setInterval are used to execute a function after a certain amount of time.
+//setTimeout is used to execute a function after a certain amount of time.
 setTimeout(hello, 1000); //ye function ko 1 second ke badd chla dega.
+//setInterval is used to execute a function repeatedly after a certain amount of time.
 setInterval(hello, 1000); //ye function ko har 1 second ke bad chla degga.

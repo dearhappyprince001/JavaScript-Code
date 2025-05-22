@@ -20,7 +20,7 @@ console.dir(allElements); //query-selectorAll.
 let firstElement = document.querySelector(".paraFirst");
 console.dir(firstElement); //query-selectorAll by class Name.
 
-      //Attributes.
+//Attributes.
 
 let div = document.querySelector("div"); //access element.
 console.log(div);

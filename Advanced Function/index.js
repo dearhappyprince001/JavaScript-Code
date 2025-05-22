@@ -1,4 +1,4 @@
-//Anonymous Function As Value.
+//---------------------->Anonymous Function As Value.
 
 let sum = function (num1, num2) {
   return num1 + num2;
@@ -6,7 +6,7 @@ let sum = function (num1, num2) {
 
 console.log(sum(5, 5)); //call a function.
 
-//Arrow Function.
+//------------------->Arrow Function.
 
 let sum1 = (num1, num2) => {
   return num1 + num2;
@@ -20,7 +20,7 @@ console.log(sum(4, 5)); //call a function.
 
 // console.log(square(5)); //call a function.
 
-//OR in a single arguments brackets are optional.
+//---------------->OR in a single arguments brackets are optional.
 
 let square = (num) => num * num; //for a single line brackets and return are optional.
 

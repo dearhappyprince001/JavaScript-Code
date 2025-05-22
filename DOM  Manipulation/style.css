@@ -1,24 +1,21 @@
-h1{
-    color: blueviolet;
-    background-color: yellowgreen;
- }
+h1 {
+  color: blueviolet;
+  background-color: yellowgreen;
+}
 
+button {
+  background-color: aqua;
+}
 
- button{
-    background-color: aqua;
- }
+.heading-class {
+  color: red;
+}
 
- .heading-class{
-    color:red;
- }
-
- div {
-   height:200px;
-   width:100px;
-   background-color:green;
-   border:2px solid blue;
-   font-size: larger;
-   font-style: italic;
-
- }
- 
+div {
+  height: 200px;
+  width: 100px;
+  background-color: green;
+  border: 2px solid blue;
+  font-size: larger;
+  font-style: italic;
+}
