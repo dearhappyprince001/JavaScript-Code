@@ -7,11 +7,30 @@ function sayMyName(finalName) {
 }
 sayMyName("dear happy prince"); //normal-function call.
 
-sayMyName("dear happy prince"); //function-Hoisting.
-
+//function-Hoisting
+sayMyName("Suraj Kumar"); //suraj kumar.
 function sayMyName(finalName) {
   console.log(finalName);
 }
+
+console.log(addOne(5)); //6
+function addOne(num) {
+  return num + 1;
+}
+
+//but agar hum function ko kisi variable mein store kra kr hoisting krte hai toh error aayega.
+
+addTwo(5); //reference error
+const addTwo = function (num) {
+  return num + 2;
+};
+
+//with arrow function.
+
+test(); //reference error
+const test = () => {
+  console.log("using arrow function for hoisting");
+};
 
 //---------------->Variable-Hosting is only possible with var keyword not with let and const.
 

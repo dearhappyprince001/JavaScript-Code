@@ -1,4 +1,4 @@
-//Global scope
+//------------------------------>Global scope
 //it is declared all over the file such as in block,function,conditional-statement,loops.
 
 var age = 22;
@@ -22,12 +22,15 @@ function hello() {
 }
 hello();
 
-//Function-Scope.
+//------------------------------->Function-Scope.
 //its only used only in function block.
 
 //console.log(age);   //it's not possible it will create error.
 
 function sayHello() {
+  var name = "Earth";
+  console.log("Hello Dunia:", name);
+
   var age = 21; //by var keyword.
   let fullName = "happy"; //by let keyword.
   const size = 34; ////by const keyword.
@@ -36,10 +39,12 @@ function sayHello() {
   console.log(size);
 }
 //console.log(age);  //it's not possible it will create error.
+//console.log(size); //it's not possible it will create error.
 
 sayHello();
 
-//Block scope
+//--------------------------->Block scope
+//Note : var is not a block scope it ca access from anywhere , but let and const are block scope.
 
 console.log(mName);
 {
@@ -47,7 +52,7 @@ console.log(mName);
   console.log(mName);
 }
 
-console.log(mName);
+console.log(mName); //"happy"
 
 {
   let age = 22; //by let keyword
