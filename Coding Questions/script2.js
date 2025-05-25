@@ -220,9 +220,23 @@ const object2 = { b: 3, c: 4 };
 const mergedObject = { ...object1, ...object2 };
 console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
 
+//Program to check if an object is empty or not.
+function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
+console.log(isEmpty({})); //true
+console.log(isEmpty({ a: 1 })); //false
+
 //program to clone an object
 const clonedObject = { ...person };
 console.log(clonedObject); // Output: { name: 'John', age: 30, country: 'USA' }
+
+//count properties in an object.
+
+function countProperties(obj) {
+  return Object.keys(obj).length;
+}
+console.log(countProperties({ a: 1, b: 2, c: 3, d: 4 })); //4
 
 //program to iterate over an object
 for (const key in person) {

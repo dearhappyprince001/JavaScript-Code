@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //-------------------------------->Set--->It contains only unique elements.
+      let array = [1, 2, 3, 4];
+      let set = new Set(array);
+      console.log(set);
+      console.log(set.size);
+
+      set.add(5);
+      console.log(set);
+      set.add(4);
+      console.log(set);
+      console.log(set.size);
+      set.delete(5);
+      console.log(set);
+      console.log(set.has(4));
+      console.log(set.has(6));
+
+      set.forEach((elements) => {
+        console.log(elements);
+      });
+
+      var obj1 = { name: "Prince" };
+      set.add(obj1);
+      console.log(obj1);
+
+      set.clear();
+      console.log(set);
+      console.log(set.has(1));
+
+      //---------------------------------->Map-->It stores data into key values pair.
+      //in map new value override the previous value.
+
+      let map = new Map([
+        ["a", "Arun"],
+        ["b", "Sumit"],
+      ]); //create a map.
+      map.set("b", "Piyush");
+      map.set("b", "Aryan");
+      console.log(map);
+
+      for (let [key, value] of map) {
+        console.log(`KEYS:${key} , VALUES:${value}`);
+      }
+
+      map.forEach((key, value) => {
+        console.log(key, value);
+      });
+
+      console.log(map.get("a"));
+      map.delete("a");
+      console.log(map);
+      console.log(map.has("a"));
+      console.log(map.size);
+      map.clear();
+      console.log(map);
+
+      //----------------------------->WeakSet------> it's only stores Object.
+      // And we can not iterate over weakSet.
+      //and it has no size Property.
+
+      let ws = new WeakSet();
+
+      let obj1 = { name: "Arpit" };
+      let obj2 = { name: "Kumar" };
+
+      ws.add(obj1);
+      ws.add(obj2);
+      console.log(ws);
+      //console.log(ws.size);//undefined
+      console.log(ws.has(obj1));
+      ws.delete(obj1);
+      console.log(ws.has(obj1));
+
+      //------------------------------>WeakMap
+
+      let wm = new WeakMap();
+      let obj3 = {};
+      let obj4 = {};
+
+      wm.set(obj3, "private");
+      wm.set(obj4, "private data");
+      console.log(wm);
+      console.log(wm.has(obj3));
+    </script>
+  </body>
+</html>

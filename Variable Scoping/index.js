@@ -1,9 +1,9 @@
 //------------------------------>Global scope
 //it is declared all over the file such as in block,function,conditional-statement,loops.
 
-var age = 22;
+var age = 22; //Global Variable.
 
-console.log(age);
+console.log(age); //22
 
 {
   console.log(age); //block level
@@ -32,21 +32,25 @@ function sayHello() {
   console.log("Hello Dunia:", name);
 
   var age = 21; //by var keyword.
+
   let fullName = "happy"; //by let keyword.
-  const size = 34; ////by const keyword.
-  console.log(age);
-  console.log(fullName);
-  console.log(size);
+
+  const size = 34; //by const keyword.
+
+  console.log(age); //22
+  console.log(fullName); //"happy"
+  console.log(size); //34
 }
 //console.log(age);  //it's not possible it will create error.
 //console.log(size); //it's not possible it will create error.
+//console.log(fullName);//it's not possible it will create
 
 sayHello();
 
 //--------------------------->Block scope
-//Note : var is not a block scope it ca access from anywhere , but let and const are block scope.
+//Note : var is not a block scope it can access from anywhere , but let and const are block scope.
 
-console.log(mName);
+console.log(mName); //undefined---> due to hoisting
 {
   var mName = "happy";
   console.log(mName);

@@ -1,4 +1,25 @@
-//------------->1.call method ye current execution context kisi aur function ko pass kar deta hai.
+//------------->1.call method-------------->ye current execution context kisi aur function ko pass kar deta hai.
+
+//Problem statement:
+
+let userDetails = {
+  userName: "John",
+  age: 30,
+  Designation: "Software Engineer",
+  printDetails: function () {
+    console.log(this);
+    //console.log(this.name); //this point to userDetails object.
+    //console.log(this.age); //this point to userDetails object.
+  },
+};
+userDetails.printDetails(); //ye current execution context userDetails ko pass karega.
+
+let userDetails2 = {
+  userName: "Doe",
+  age: 25,
+  Designation: "Data Scientist",
+};
+userDetails.printDetails.call(userDetails2); //ye current execution context userDetails2 ko pass karega.
 
 //example1.
 function setUserName(userName) {
