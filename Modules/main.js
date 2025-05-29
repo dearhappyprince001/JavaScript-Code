@@ -1,13 +1,24 @@
-// import { message } from "./library.js";
-// console.log(message);
+//This is the main.js file where we will import variables, functions, and classes from library.js.
 
-// import { hello } from "./library.js";
-// hello();
+import { message } from "./library.js";
+console.log(message);
 
-// import { user } from "./library.js";
-// let obj = new user();
+import { hello } from "./library.js";
+hello();
 
-//or we want to print all variables,function,and class also so we have a short-hand Notation.
+import { user } from "./library.js";
+
+//let obj = new user(); //print object.
+
+//------------->Or
+// This is a library file that exports variables, functions, and classes.
+
+import * as happy from "./library.js";
+console.log(happy.message); //print variable.
+console.log(happy.hello()); //print function.
+console.log(new happy.user()); //print object.
+
+//---------->or we want to print all variables,function,and class also so we have a short-hand Notation.
 
 import { message, hello, user } from "./library.js";
 
