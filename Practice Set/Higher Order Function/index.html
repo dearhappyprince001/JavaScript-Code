@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order Function</title>
+  </head>
+  <body></body>
+  <script>
+    const users = [
+      { id: 1, name: "Amit", isActive: true, age: 20 },
+      { id: 1, name: "Suraj", isActive: true, age: 18 },
+      { id: 1, name: "Arpit", isActive: true, age: 34 },
+      { id: 1, name: "Kamal", isActive: false, age: 30 },
+    ];
+
+    //UseCases:
+    // 1. Write code to get array of names from given array of users.
+    // 2. Get back only active users.
+    // 3. Sort user by age into descending.
+
+    // 1. Write code to get array of names from given array of users.
+
+    const names = [];
+    //using for-loop
+    for (let i = 0; i < users.length; i++) {
+      names.push(users[i].name);
+    }
+    console.log(names);
+
+    //using forEach-loop
+    users.forEach((user) => {
+      names.push(user.name);
+    });
+    console.log(names);
+
+    // 2. get Back only active users.
+
+    //using forEach loop
+    users.forEach((user) => {
+      if (user.isActive) {
+        names.push(user.name);
+      }
+    });
+    console.log(names);
+
+    const name1 = users
+      .filter((user) => user.isActive)
+      .map((user) => user.name);
+    console.log(name1);
+
+    // 3. Sort user by age into descending.
+
+    users.sort((user1, user2) => (user1.age < user2.age ? -1 : 1)); //sorting in ascending order.
+    console.log(users);
+
+    users.sort((user1, user2) => user1.age - user2.age); //sorting in ascending order.
+    users.sort((user1, user2) => user2.age - user1.age); //sorting in descending order.
+    console.log(users);
+
+    //Performing all in One.
+    const names2 = users
+      .filter((user) => user.isActive)
+      .sort((user1, user2) => user1.age - user2.age)
+      .map((user) => user.name);
+    console.log(names2);
+
+    //Sequence of using forEach,map,filter,sort
+
+    //.filter()   // 1. Filter the data
+    //.map()      // 2. Transform each element
+    //.sort()     // 3. Sort the transformed data
+    //.forEach()  // 4. Iterate for side effects (logging, etc.)
+
+    const numbers = [5, 2, 9, 1, 7, 3];
+
+    // Step-by-step:
+    const result = numbers
+      .filter((n) => n > 2) // Keep numbers greater than 2 → [5, 9, 7, 3]
+      .map((n) => n * 2) // Double each number         → [10, 18, 14, 6]
+      .sort((a, b) => a - b) // Sort ascending             → [6, 10, 14, 18]
+      .reduce((sum, n) => sum + n, 0); // Sum all numbers            → 48
+
+    console.log(result); // Output: 48
+  </script>
+</html>

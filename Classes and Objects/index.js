@@ -1,5 +1,6 @@
 //---------------------->create an object by literals.
-
+//ways to create an object in javascript.
+//1. By using object literals.
 let student = {
   fullName: "Dear Happy Prince",
   marks: 96,
@@ -10,6 +11,14 @@ console.log(Object.keys(student));
 console.log(Object.values(student));
 console.log(Object.entries(student)); //yeh object ki keys and values ko array mein convert kr deta hai.
 Object.freeze(student); //is method se hum object ki values ko change nhi kr sakte hai.
+
+//2. By using new keyword or constructor.
+let student1 = new Object(); //create an object.
+//----------------------->add properties in an object.
+student1.fullName = "Dear Happy Prince";
+student1.marks = 96;
+student1.rollNo = 19;
+console.log(student1.marks);
 
 //-------------------->create an object by literals.
 

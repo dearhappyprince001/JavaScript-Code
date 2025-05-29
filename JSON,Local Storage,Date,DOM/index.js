@@ -13,12 +13,12 @@ let product = {
   },
 };
 console.log(typeof product); //JSON object.
-console.log(product);
+console.log(product); //JSON object.
 
 //JSON.stringify() is used to convert JSON object into String.
 let str = JSON.stringify(product); //convert JSON object to String.
-console.log(typeof str);
-console.log(str);
+console.log(typeof str); //String.
+console.log(str); //String.
 
 //JSON.parse() is used to convert String into JSON object.
 let newProduct = JSON.parse(str); //convert String to JSON Object.
@@ -31,7 +31,7 @@ console.log(newProduct);
 // local storage is used to store data in string format.
 // local storage is used to store data in browser even after refresh.
 
-let product = {
+let product1 = {
   name: "TShirt",
   price: 899,
   rating: {
@@ -48,9 +48,9 @@ let product = {
 
 // console.log(localStorage.getItem("Price")); //get-item .
 
-localStorage.setItem("product", JSON.stringify(product)); //convert object into String.
+localStorage.setItem("product", JSON.stringify(product1)); //convert object into String.
 
-console.log(localStorage.getItem("product"));
+console.log(localStorage.getItem("product1"));
 
 let product2 = JSON.parse(localStorage.getItem("product")); //convert string into object.
 

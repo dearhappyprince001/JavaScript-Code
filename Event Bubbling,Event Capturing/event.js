@@ -34,7 +34,7 @@ button.addEventListener(
   true
 );
 
-//------------->Event Properties Example.
+//------------->Event Propagation Example.
 // In this example, we prevent the event from bubbling up to the div when the button is clicked.
 
 var div = document.querySelector("div");
@@ -49,7 +49,7 @@ button.addEventListener("click", (event) => {
 });
 
 //-------------->Immediate Propagation Example.
-//if yoy have multiple event listeners on the same element,
+//if you have multiple event listeners on the same element,
 // the stopImmediatePropagation method prevents any other listeners from being called.
 var div = document.querySelector("div");
 var button = document.querySelector("button");

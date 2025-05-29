@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ------------------>Synchronous code.
+      console.log("Hello World 1");
+      console.log("Hello World 2");
+      console.log("Hello World 3");
+      function sayMyName() {
+        console.log("My Name is Rohit");
+      }
+      sayMyName();
+      console.log("Hello World 4");
+      console.log("Hello World 5");
+
+      // ----------------->Asynchronous code.
+      console.log("Hello World 1");
+      console.log("Hello World 2");
+      console.log("Hello World 3");
+      function sayMyName() {
+        console.log("My Name is Rohit");
+      }
+      setTimeout(sayMyName, 10000);
+      console.log("Hello World 4");
+      console.log("Hello World 5");
+
+      //---------------->Promise Example1
+      let firstPromise = new Promise((resolve, reject) => {
+        console.log("Hello");
+        //resolve(1001);
+        //reject(new Error("Internal Server Error"));
+
+        setTimeout(function sayMyName() {
+          console.log("My Name is Rohit");
+        }, 1000);
+        //return 1;
+        resolve(1);
+      });
+
+      // //---------------->Promise Example2
+      let promise1 = new Promise((resolve, reject) => {
+        let success = true;
+        //let success = false;
+
+        if (success) {
+          resolve("Promise FullFilled");
+        } else {
+          reject("Promise Rejected");
+        }
+      });
+
+      promise1
+        .then((message) => {
+          console.log("Then Message is: " + message);
+        })
+        .catch((error) => {
+          console.log("Error: " + error);
+        });
+
+      //----------------->we can use multiple then (Known as Promise chaining).
+      promise1
+        .then((message) => {
+          console.log("First Message:" + message);
+          return "Promise Fulfilled second message";
+        })
+        .then((message) => {
+          console.log("Second Message:" + message);
+          return "Promise FulFilled third message";
+        })
+        .then((message) => {
+          console.log("Third Message:" + message);
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally((message) => {
+          console.log(
+            "I am finally block and i will run always if code is handled or not"
+          );
+        });
+
+      // //---------------->Multiple Promises jo concurrently run ho rhe hai unko handle krne ke liye Promise.all([]) ko use krenge.
+
+      let promise2 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 1000, "First");
+      });
+
+      let promise3 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 2000, "Second");
+      });
+
+      let promise4 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 4000, "Third");
+      });
+
+      Promise.all([promise2, promise3, promise4])
+        .then((values) => {
+          console.log(values);
+        })
+        .catch((error) => {
+          console.error("Error:" + error);
+        });
+
+      //------------->Promise.all([]) Example2.
+
+      const fetchUserData = new Promise((resolve) => {
+        setTimeout(() => resolve("User Data"), 1000);
+      });
+
+      const fetchPostData = new Promise((resolve, reject) => {
+        const success = true;
+        setTimeout(() => {
+          if (success) {
+            resolve("fetchPostData SuccessFully");
+          } else {
+            reject("Failed to fetch Data");
+          }
+        }, 2000);
+      });
+
+      promise
+        .all([fetchUserData, fetchPostData])
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

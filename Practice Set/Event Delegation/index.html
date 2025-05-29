@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+  </head>
+  <body>
+    <h3>Example of Event Delegation</h3>
+    <div id="parent">
+      <button id="btn">Button1</button>
+      <button id="btn">Button2</button>
+      <button id="btn">Button3</button>
+      <button id="btn">Button4</button>
+      <button id="btn">Button5</button>
+      <button id="btn">Button6</button>
+      <button id="btn">Button7</button>
+      <button id="btn">Button8</button>
+      <button id="btn">Button9</button>
+      <button id="btn">Button10</button>
+    </div>
+  </body>
+  <script>
+    document.getElementById("parent").addEventListener("click", (event) => {
+      if (event.target.id === "btn") {
+        alert(`You Clicked ${event.target.innerText}`);
+      }
+    });
+  </script>
+</html>

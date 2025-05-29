@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+  </head>
+  <body>
+    <div>
+      <button>Click Me</button>
+      <a href="home.html">HOME</a>
+    </div>
+  </body>
+  <script>
+    //Event bubbling
+    var div = document.querySelector("div");
+    var button = document.querySelector("button");
+
+    div.addEventListener("click", () => {
+      console.log("Div Clicked");
+    });
+
+    button.addEventListener("click", () => {
+      console.log("Button Clicked");
+    });
+
+    //Event Capturing.
+    var div = document.querySelector("div");
+    var button = document.querySelector("button");
+
+    div.addEventListener(
+      "click",
+      () => {
+        console.log("Div Clicked");
+      },
+      true
+    );
+
+    button.addEventListener(
+      "click",
+      () => {
+        console.log("Button Clicked");
+      },
+      true
+    );
+
+    // //Stop Propagation.
+    var div = document.querySelector("div");
+    var button = document.querySelector("button");
+
+    div.addEventListener("click", () => {
+      console.log("Div Clicked");
+    });
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      console.log("Button Clicked");
+    });
+
+    //Immediate Stop Propagation.
+    var div = document.querySelector("div");
+    var button = document.querySelector("button");
+
+    button.addEventListener("click", (event) => {
+      console.log("Button Clicked For 1st Time");
+    });
+
+    button.addEventListener("click", (event) => {
+      event.stopImmediatePropagation();
+      console.log("Button Clicked For 2nd Times");
+    });
+
+    //Prevent Default.
+    var a = document.querySelector("a");
+
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("link clicked");
+    });
+  </script>
+</html>
