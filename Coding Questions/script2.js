@@ -284,3 +284,155 @@ function countProperties(object) {
 }
 console.log(countProperties(person)); // Output: 3
 console.log(countProperties({ a: 1, b: 2, c: 3 })); // Output: 3
+
+//----------------------------------------------->Type coresion Questions.
+
+//--------------------------------->
+let x = [20, 44, 1, 3].sort();
+console.log(x); //[ 1, 20, 3, 44 ]
+
+let y = [90, 56, 78, 23, 62].sort();
+console.log(y); //[ 23, 56, 62, 78, 90 ]
+
+//----------------------------------->
+console.log(!!""); //false.
+
+//----------------------------------->
+console.log(1 < 2 < 3); //true.
+console.log(5 < 8 > 2); //false.
+console.log(1 > 19 < 2); //true.
+
+//----------------------------------->
+// (function () {
+//   var a = (b = 3);
+// })();
+// console.log(typeof b); //number
+
+//----------------------------------->
+console.log([1, 2, 3] + [1, 3, 4]); //1,2,31,3,4
+console.log([12, 3, 4] + [5, 16, 7]); //12,3,45,16,7
+
+//----> in case of (-) it will provide NaN as output.
+console.log([1, 2, 3] - [1, 3, 4]); //NaN
+console.log([12, 3, 4] - [5, 16, 7]); //NaN
+
+//----------------------------------->
+console.log("A" - 1); //NaN
+console.log("A" + 1); //A1
+
+//----------------------------------->
+let array = [, , ,];
+console.log(array); //[undefined, undefined, undefined, undefined]
+console.log(array.length); //4
+console.log(typeof array); //object
+
+//----------------------------------->
+console.log(null > 0); //false
+console.log(null === 0); //false
+console.log(null == 0); //false
+console.log(null >= 0); //true
+
+//----------------------------------->
+let name = "sanju";
+let sliced = name.slice(1, 4);
+console.log(sliced); //anj --------> Note last index not included.
+
+//Note: splice() method is not used with string, it can applicable only for arrays.
+// let fName = "Arpit";
+// let spliced = fName.splice(0, 2);
+// console.log(spliced);
+
+//----------------------------------->
+let user = {
+  name: "Ram",
+  profession: "Engineer",
+};
+
+Object.defineProperty(user, "age", {
+  value: 30,
+  writable: false,
+  enumerable: true,
+  configurable: true,
+});
+
+user.age = 50;
+console.log(user.age); //30
+
+//----------------------------------->
+const arr = [1, , 3];
+console.log(arr[1]); //undefined
+console.log(1 in arr); //false
+
+//----------------------------------->
+function add(a, b, c = 3) {}
+console.log(add.length); //2
+
+//----------------------------------->
+let num = [1, 3, 5, 6, 9];
+console.log(Math.max(num));
+console.log(Math.max()); //-Infinity
+
+//----------------------------------->
+// let a = { x: 1 };
+// let b = { x: 2 };
+// let c = { x: 3 };
+// let d = { x: 4 };
+// let e = { x: 5 };
+// let arr = { a, b, c, d, e };
+
+// arr.forEach((obj) => (obj.x = obj.x * 2));
+// console.log(a.x, b.x, c.x, d.x, e.x);
+
+//----------------------------------->
+console.log(2 + 2); //4
+console.log(2 + "2"); //22
+console.log("2" + "2"); //22
+console.log(2 + 2 - 2); //2
+console.log("2" + "2" + "2"); //222
+console.log("2" + "2" - "2"); //20
+console.log(2 + +"2"); //4
+
+//----------------------------------->
+console.log(null == undefined); //true
+console.log(null === undefined); //false
+
+console.log(NaN == NaN); //false
+console.log(NaN === NaN); //false
+
+console.log(typeof null); //object
+console.log(typeof undefined); //undefined
+console.log(typeof NaN); //number
+
+console.log(+true); //1
+console.log(+""); //0
+console.log(true + 1); //2
+console.log(true + "1"); //true1
+console.log(5 + "2"); //52
+console.log("5" + true); //5true.
+
+console.log(5 && 1); //1
+console.log(5 || 1); //5
+
+console.log(0 || 1); //1
+console.log(1 || 2); //1
+console.log(0 && 1); //0
+console.log(1 && 2); //2
+
+//----------------------------------->
+const s1 = "hello";
+const s2 = new String("hello");
+
+console.log(s1 == s2); //true
+console.log(s1 === s2); //false
+
+const z = [1, 2];
+const v = "1,2";
+console.log(z == v); //true
+console.log(z === v); //false
+
+const t = [1];
+const l = [2];
+console.log(t + l); //12
+
+console.log(false || null || "hello"); //hello
+console.log(false && null & "hello"); //false
