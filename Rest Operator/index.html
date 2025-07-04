@@ -8,14 +8,15 @@
   <body>
     <script>
       function fun(a, b, ...c) {
-        console.log(`${a}`);
-        console.log(`${b}`);
-        console.log(`${a} ${b}`);
-        console.log(c);
-        console.log(c[0]);
-        console.log(c.length);
-        console.log(c.indexOf("Lionel"));
-        console.log(c.indexOf("Prem"));
+        console.log(`${a}`); //Raj
+        console.log(`${b}`); //Robin
+        console.log(`${a} ${b}`); //Raj Robin
+        console.log(c); //["Lionel", "Prem", "Sam"]
+        console.log(c[0]); //Lionel
+        console.log(c.length); //3
+        console.log(c.indexOf("Lionel")); //0
+        console.log(c.indexOf("Prem")); //1
+        console.log(c.indexOf("Sam")); //2
       }
       fun("Raj", "Robin", "Lionel", "Prem", "Sam");
 
