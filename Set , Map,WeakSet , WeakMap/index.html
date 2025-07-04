@@ -10,30 +10,30 @@
       //-------------------------------->Set--->It contains only unique elements.
       let array = [1, 2, 3, 4];
       let set = new Set(array);
-      console.log(set);
-      console.log(set.size);
+      console.log(set); // Set { 1, 2, 3, 4 }
+      console.log(set.size); // 4
 
       set.add(5);
-      console.log(set);
+      console.log(set); // Set { 1, 2, 3, 4, 5 }
       set.add(4);
-      console.log(set);
-      console.log(set.size);
+      console.log(set); // Set { 1, 2, 3, 4, 5 }
+      console.log(set.size); // 5
       set.delete(5);
-      console.log(set);
-      console.log(set.has(4));
-      console.log(set.has(6));
+      console.log(set); //
+      console.log(set.has(4)); // true
+      console.log(set.has(6)); // false
 
       set.forEach((elements) => {
         console.log(elements);
-      });
+      }); // 1 2 3 4
 
-      var obj1 = { name: "Prince" };
-      set.add(obj1);
-      console.log(obj1);
+      // var obj1 = { name: "Prince" };
+      // set.add(obj1);
+      // console.log(obj1);
 
-      set.clear();
-      console.log(set);
-      console.log(set.has(1));
+      // set.clear();
+      // console.log(set);
+      // console.log(set.has(1));
 
       //---------------------------------->Map-->It stores data into key values pair.
       //in map new value override the previous value.
@@ -44,8 +44,8 @@
       ]); //create a map.
       map.set("b", "Piyush");
       map.set("b", "Aryan");
-      console.log(map);
-
+      console.log(map); // Map { 'a' => 'Arun', 'b' => 'Aryan' }
+      console.log(map.size); // 2
       for (let [key, value] of map) {
         console.log(`KEYS:${key} , VALUES:${value}`);
       }
@@ -73,13 +73,15 @@
 
       ws.add(obj1);
       ws.add(obj2);
-      console.log(ws);
+      console.log(ws); // WeakSet { { name: 'Arpit' }, { name: 'Kumar' } }
       //console.log(ws.size);//undefined
       console.log(ws.has(obj1));
       ws.delete(obj1);
       console.log(ws.has(obj1));
 
       //------------------------------>WeakMap
+      // it stores data in key-value pairs.
+      // And it only stores objects as keys.
 
       let wm = new WeakMap();
       let obj3 = {};
@@ -87,8 +89,8 @@
 
       wm.set(obj3, "private");
       wm.set(obj4, "private data");
-      console.log(wm);
-      console.log(wm.has(obj3));
+      console.log(wm); // WeakMap { <items unknown> }
+      console.log(wm.has(obj3)); // true
     </script>
   </body>
 </html>

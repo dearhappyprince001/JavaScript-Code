@@ -94,7 +94,7 @@ console.log(findAverage([1, 2, 3, 4, 5])); // Output: 3
 
 //program to reverse a string
 function reverseString(string) {
-  return string.split("").reverse().join("");
+  return string.split("").reverse().join(""); //The split("") method splits the string into an array of characters.The reverse() method reverses the order of the array elements.The join("") method joins the array back into a string, with no spaces in between.
 }
 console.log(reverseString("hello")); // Output: "olleh"
 
@@ -365,12 +365,20 @@ console.log(1 in arr); //false
 
 //----------------------------------->
 function add(a, b, c = 3) {}
-console.log(add.length); //2
+console.log(add.length); //2 ----->in this when we use length property on function then it will return the length before the first default value.
 
 //----------------------------------->
 let num = [1, 3, 5, 6, 9];
-console.log(Math.max(num));
+console.log(Math.max(...num)); //9
 console.log(Math.max()); //-Infinity
+console.log(Math.min(...num)); //1
+console.log(Math.min()); //Infinite.
+
+//----------------------------------->
+const sym = Symbol("id");
+const obj = { [sym]: 123 };
+console.log(Object.keys(obj)); //[]
+console.log(Object.getOwnPropertySymbols(obj)); //[ Symbol(id) ]
 
 //----------------------------------->
 // let a = { x: 1 };
@@ -436,3 +444,106 @@ console.log(t + l); //12
 
 console.log(false || null || "hello"); //hello
 console.log(false && null & "hello"); //false
+
+//----------------------------------->
+const mySymbol1 = Symbol("description");
+const mySymbol2 = Symbol("description");
+console.log(mySymbol1 === mySymbol2); // false
+
+const uniqueKey = Symbol("myUniqueProperty");
+const myObject = {
+  name: "Alice",
+  [uniqueKey]: "This is a unique value",
+};
+console.log(myObject[uniqueKey]); // This is a unique value
+
+//------------------------------------>
+
+//------------> Swapping two numbers without using a temporary variable or third variable.
+let a = 20;
+let b = 30;
+
+console.log(`Before Swapping:" a is${a}and b is ${b}`); // Before Swapping: a is 20 and b is 30
+
+a = a + b; // a becomes 50
+b = a - b; // b becomes 20
+a = a - b; // a becomes 30
+
+console.log(`After Swapping: a is ${a} and b is ${b}`); // After Swapping: a is 30 and b is 20
+
+console.log("\n");
+
+// Swapping using third variable.
+let k = 5;
+let u = 10;
+
+console.log(`Before Swapping: k is ${k} and u is ${u}`); // Before Swapping: k is 5 and u is 10
+let temp = k; // Using a temporary variable to hold the value of k.
+k = u; // Assigning the value of u to k.
+u = temp; // Assigning the value of temp (original k) to u.
+
+console.log(`After Swapping: k is ${k} and u is ${u}`); // After Swapping: k is 10 and u is 5
+
+console.log("\n");
+
+// --------->Swapping two numbers using destructuring assignment.
+let m = 10;
+let n = 20;
+
+console.log(`Before Swapping: m is ${m} and n is ${n}`); // Before Swapping: m is 10 and n is 20
+
+[m, n] = [n, m];
+
+console.log(`After Swapping: m is ${m} and n is ${n}`); // After Swapping: m is 20 and n is 10
+
+//-------------------------------------->
+//1.Type Coresion.
+
+// let value = "4";
+// let secondValue = 5;
+// //when you add a string with number then it will always get string.
+// let result = value + secondValue;
+// //when you use any operator insteadOf (+) then priority will be number value.
+// let result2 = value - secondValue;
+
+// console.log(result); //45
+// console.log(typeof result); //string
+
+// console.log(result2); //-1
+// console.log(typeof result2); //number
+
+//2.Type Casting.
+let value = "22";
+console.log(typeof value); //string
+
+let newValue = Number(value);
+console.log(newValue); //22
+console.log(typeof newValue); //number
+
+let value2 = 30;
+console.log(typeof value2); //number
+
+let newValue2 = String(value2);
+console.log(newValue2); //30
+console.log(typeof newValue2); //string
+
+let value3 = "Happy";
+console.log(typeof value3); //string
+
+let newValue3 = Boolean(value3);
+console.log(newValue3); //true
+console.log(typeof newValue3); //boolean
+
+let value4 = "";
+console.log(typeof value4); //string
+
+let newValue4 = Number(value4);
+console.log(newValue4); //0
+console.log(typeof newValue4); //number
+
+//-------------------------------->
+
+let am = Math.max() < Math.min();
+let bm = Math.max() > Math.min();
+console.log(am); //true
+console.log(bm); //false

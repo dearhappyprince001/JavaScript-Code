@@ -16,7 +16,7 @@ obj.greet(); //access the function.
 
 let array = [1, 2, 3, 4, 5];
 console.log(array); //by array-literals.
-console.log(array[3]);
+console.log(array[3]); //4
 console.log(array.length); //5
 console.log(Array.isArray(array)); //true.
 console.log(array.includes(10)); //false.

@@ -12,11 +12,11 @@ console.log(lname); //by literals.
 let myName = new String("Happy"); // by new keyword.
 console.log(myName);
 
-console.log(typeof firstName);
-console.log(typeof lastName);
-console.log(typeof nName);
-console.log(typeof lname);
-console.log(typeof myName);
+console.log(typeof firstName); //string.
+console.log(typeof lastName); //string.
+console.log(typeof nName); //string.
+console.log(typeof lname); //string.
+console.log(typeof myName); //object.
 
 let s1 = "happy";
 let s2 = "prince";

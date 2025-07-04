@@ -19,6 +19,8 @@ const person2 = createPerson("Bob", 25);
 person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
 person2.greet(); // Output: Hello, my name is Bob and I am 25 years old.
 
+console.log("\n");
+
 //Example2
 function createCar(make, model, year) {
   return {

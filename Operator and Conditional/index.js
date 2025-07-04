@@ -26,9 +26,9 @@ console.log(f);
 
 //Ternary-operator.
 
-let age = 25;
+let agee = 25;
 let check =
-  age > 18 ? "i can vote for this year" : "i can not vote for this year";
+  agee > 18 ? "i can vote for this year" : "i can not vote for this year";
 console.log(check); //ternary-operator.
 
 //logical-Operator.

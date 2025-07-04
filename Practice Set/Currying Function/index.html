@@ -7,14 +7,14 @@
   </head>
   <body></body>
   <script>
-    //normal function
+    //--------------------->normal function
     function add(a, b, c) {
       return a + b + c;
     }
     let result = add(2, 2, 2);
     console.log(result); //6
 
-    //currying function.
+    //--------------------->currying function.
     function addition(a) {
       return function (b) {
         return function (c) {
@@ -22,18 +22,19 @@
         };
       };
     }
-    let result1 = addition(1);
-    console.log(result1);
 
-    let result2 = addition(2);
-    console.log(result2);
+    //---------->Usage of curried Function.
+    //----------------->this method is to long and much time taken.
+    // let addOne = addition(1);
+    // let addOneAndTwo = addOne(2);
+    // let result = addOneAndTwo(3);
+    // console.log(result);//6
 
-    let result3 = addition(3);
-    console.log(result3);
+    //---------->Or call directly.
+    //-------->by using this it is much better.
+    console.log(addition(1)(2)(3)); //6
 
-    let currying = addition(1)(2)(3);
-    console.log(currying); //6
-
+    //-------------->Example2.
     function product(a) {
       return function (b) {
         return a * b;
@@ -43,7 +44,9 @@
     let currying2 = product(2)(4);
     console.log(currying2); //8
 
-    //Infinite Currying.
+    console.log("\n");
+
+    //--------------------------->Infinite Currying.
 
     function addition(a) {
       return function (b) {
@@ -53,9 +56,12 @@
       };
     }
 
-    console.log(addition(2)(5)(3)());
+    console.log(addition(2)(5)(3)()); //10
 
-    //infinite currying
+    console.log("\n");
+
+    //--------------------->infinite currying
+    //--------------------1st Ways.
     function addition(a) {
       return function (b) {
         if (b === undefined) {
@@ -68,5 +74,23 @@
     console.log(addition(1)(2)(3)()); // Output: 6
     console.log(addition(1)(2)(3)(4)(8)()); // Output: 18
     console.log(addition(5)(10)(20)(23)(30)()); // Output: 88
+    console.log(addition(10)(20)(40)(100)(30)(32)(10)(50)(60)()); //352
+
+    console.log("\n");
+
+    //------------------OR---------------------
+    //-------------------->2nd ways.
+
+    function addition(a) {
+      return function (b) {
+        if (b) return addition(a + b);
+        return a;
+      };
+    }
+
+    console.log(addition(1)(2)(3)()); // Output: 6
+    console.log(addition(1)(2)(3)(4)(8)()); // Output: 18
+    console.log(addition(5)(10)(20)(23)(30)()); //Output: 88
+    console.log(addition(10)(20)(40)(100)(30)(32)(10)(50)(60)()); //352
   </script>
 </html>

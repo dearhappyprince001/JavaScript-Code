@@ -66,6 +66,12 @@ for (let key in person) {
   console.log(person[key]);
 }
 
+console.log("\n");
+
+for (let entries in person) {
+  console.log(person[entries]);
+}
+
 //-------------------------------->for of loop.
 
 const arr = [1, 2, 3, 4, 5]; //with array.
@@ -83,6 +89,7 @@ for (const id of ids) {
   console.log(id);
 }
 
+//with map.
 const scores = new Map([
   ["Alice", 90],
   ["Bob", 80],
@@ -90,7 +97,6 @@ const scores = new Map([
 for (const [name, score] of scores) {
   console.log(`${name}: ${score}`);
 }
-//with map.
 
 //--------------------------------->for each loop.
 

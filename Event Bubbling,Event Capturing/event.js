@@ -1,44 +1,49 @@
-//--------------->Event Bubbling Example.
-//it occurs from child to parent.
-//it is the default behavior of events in the DOM.
-// In this example, when the button is clicked, the event bubbles up to the div,
-var div = document.querySelector("div");
-var button = document.querySelector("button");
-div.addEventListener("click", () => {
-  console.log("Div clicked");
-});
+// //--------------->Event Bubbling Example.
+// //it occurs from child to parent.
+// //it is the default behavior of events in the DOM.
+// // In this example, when the button is clicked, the event bubbles up to the div,
 
-button.addEventListener("click", () => {
-  console.log("Button clicked");
-});
+// var div = document.querySelector("div");
+// var button = document.querySelector("button");
 
-//---------------->Event Capturing Example.
-//it occurs from parent to child.
-//it is mention to true in the addEventListener method.
-// In this example, the event is captured at the div level before it reaches the button.
-var div = document.querySelector("div");
-var button = document.querySelector("button");
-div.addEventListener(
-  "click",
-  () => {
-    console.log("Div clicked");
-  },
-  true
-);
+// div.addEventListener("click", () => {
+//   console.log("Div clicked");
+// });
 
-button.addEventListener(
-  "click",
-  () => {
-    console.log("Button clicked");
-  },
-  true
-);
+// button.addEventListener("click", () => {
+//   console.log("Button clicked");
+// });
+
+// //---------------->Event Capturing Example.
+// //it occurs from parent to child.
+// //it is mention to true in the addEventListener method.
+// // In this example, the event is captured at the div level before it reaches the button.
+
+// var div = document.querySelector("div");
+// var button = document.querySelector("button");
+
+// div.addEventListener(
+//   "click",
+//   () => {
+//     console.log("Div clicked");
+//   },
+//   true
+// );
+
+// button.addEventListener(
+//   "click",
+//   () => {
+//     console.log("Button clicked");
+//   },
+//   true
+// );
 
 //------------->Event Propagation Example.
 // In this example, we prevent the event from bubbling up to the div when the button is clicked.
 
 var div = document.querySelector("div");
 var button = document.querySelector("button");
+
 div.addEventListener("click", () => {
   console.log("Div clicked");
 });
@@ -51,6 +56,7 @@ button.addEventListener("click", (event) => {
 //-------------->Immediate Propagation Example.
 //if you have multiple event listeners on the same element,
 // the stopImmediatePropagation method prevents any other listeners from being called.
+
 var div = document.querySelector("div");
 var button = document.querySelector("button");
 
