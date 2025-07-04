@@ -9,7 +9,28 @@ console.log(marks); //90
 
 //No Temporal Dead Zone with var
 
+console.log(a1); // undefined
+var a1 = 10;
+
+console.log(b); // Reference error
+let b = 10;
+
+console.log(c); // 20
+const c = 20;
+
 {
-  console.log(a); // undefined
+  console.log(a); // Reference error
   var a = 5;
+}
+
+{
+  console.log(d); // Reference error
+  let d = 30;
+}
+
+{
+  console.log(e); // Reference error
+  const e = 40;
+}
+{
 }

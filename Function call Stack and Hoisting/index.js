@@ -1,4 +1,5 @@
 //Hosting is of two types.
+//hoisting is a javaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compile phase.
 
 //------------------->Function-Hoisting.
 
@@ -25,7 +26,7 @@ const addTwo = function (num) {
   return num + 2;
 };
 
-//with arrow function.
+//------------------>with arrow function.
 
 test(); //reference error
 const test = () => {
@@ -34,19 +35,23 @@ const test = () => {
 
 //---------------->Variable-Hosting is only possible with var keyword not with let and const.
 
-var age = 22;
-console.log(age); //20 normal var-keyword variable.
+//if we use let and const then it will show reference error.
+//var is hoisted and initialized with undefined.
+//let and const are hoisted but not initialized, so they throw a reference error if accessed before declaration.
 
-console.log(age); //variable-hoisting.
-var age = 22; //but showing undefined.
+var age = 22;
+console.log(age); //22 normal var-keyword variable.
+
+console.log(age); //but showing undefined
+var age = 22;
 
 console.log(age); //showing reference error.
 let age = 21;
 
-console.log(age); //also showing reference error.
-const age = 33;
+// console.log(age); //also showing reference error.
+// const age = 33;
 
-//-------------------->class-level-hosting.
-
-const Object1 = new Human(); //class level hoisting is not allowed it will create error.
-class Human {}
+// //-------------------->class-level-hosting.
+//class decleration is not hoisted.
+// const Object1 = new Human(); //class level hoisting is not allowed it will create error.
+// class Human {}
