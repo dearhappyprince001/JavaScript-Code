@@ -547,3 +547,51 @@ let am = Math.max() < Math.min();
 let bm = Math.max() > Math.min();
 console.log(am); //true
 console.log(bm); //false
+
+//-------------------------------->
+
+if ([]) {
+  console.log("Amit is absent");
+} else {
+  console.log("Amit is present");
+}
+// Output: Amit is absent
+
+//------------------------------------->
+if ([] == true) {
+  console.log("Raghav is absent");
+} else {
+  console.log("Raghav is present");
+}
+// Output: Raghav is present
+
+//------------------------------------->
+
+let obj = {
+  a: {
+    b: undefined,
+  },
+};
+console.log(obj.a?.b?.c?.d ?? "Happy"); // Output: Happy
+
+//------------------------------------>
+var abc = 25;
+if (function f() {}) {
+  abc = abc + typeof f;
+}
+console.log(abc); // Output: 25undefined
+
+//------------------------------->
+// Example of infinite currying
+function addition(a) {
+  return function (b) {
+    if (b === undefined) {
+      return a; // If no argument is provided, return the accumulated sum
+    }
+    return addition(a + b); // Continue currying with the new sum
+  };
+}
+
+console.log(addition(1)(2)(3)()); // Output: 6
+console.log(addition(1)(2)(3)(4)(8)()); // Output: 18
+console.log(addition(5)(10)(20)(23)(30)()); // Output: 88

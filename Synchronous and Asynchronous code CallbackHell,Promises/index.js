@@ -1,5 +1,5 @@
 //Synchronous-code.
-
+//execution of code is done line by line, one after another.
 console.log("one"); //first-instruction
 console.log("two"); //second-instruction
 console.log("three"); //third-instruction
@@ -8,6 +8,7 @@ console.log("five"); //fifth-instruction
 console.log("six"); //sixth-instruction
 
 //Asynchronous-code.
+//execution of code is done in parallel, not line by line.
 
 console.log("one");
 console.log("two");

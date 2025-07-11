@@ -1,11 +1,14 @@
 //----------------->Debouncing
 // Debouncing is a technique used to limit the rate at which a function can fire.
+//it is used to avoid unwanted function calls, such as when a user is typing in a search box.
+//and it is achieved by setTimeout web API.
 
 let counter = 0;
 function getData() {
   console.log("Fetching Data" + counter++);
 }
 
+//recieve a callback function and a delay
 function myDebounce(callBack, delay) {
   let timer;
   return function (...args) {
