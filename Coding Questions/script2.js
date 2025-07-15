@@ -1,8 +1,8 @@
 // 1.sort an array in ascending order
-function sortArray(array) {
+function sortArrayAscending(array) {
   return array.sort((a, b) => a - b);
 }
-console.log(sortArray([5, 3, 8, 1, 2])); // Output: [1, 2, 3, 5, 8]
+console.log(sortArrayAscending([5, 3, 8, 1, 2])); // Output: [1, 2, 3, 5, 8]
 
 // 2.sort an array in descending order
 function sortArrayDescending(array) {
@@ -595,3 +595,23 @@ function addition(a) {
 console.log(addition(1)(2)(3)()); // Output: 6
 console.log(addition(1)(2)(3)(4)(8)()); // Output: 18
 console.log(addition(5)(10)(20)(23)(30)()); // Output: 88
+
+//----------------------------------->
+
+console.log(parseInt("7")); //7
+console.log(parseInt("7*6")); //7
+console.log(parseInt("7Din")); //7
+
+//---------------------------------------->
+
+class Cosmic {}
+console.log(typeof Cosmic); //function
+
+//-------------------------->
+
+const name = "Kumar sanu";
+age = 23;
+
+console.log(delete name); //false
+console.log(delete age); //true
+console.log(typeof age); //undefined
