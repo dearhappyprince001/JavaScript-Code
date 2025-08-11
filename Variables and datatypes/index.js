@@ -1,4 +1,4 @@
-// var ----------> it is a function scope variable.
+// var ----------> it is a function scoped or global scoped variable.
 
 var age = 22;
 if (true) {

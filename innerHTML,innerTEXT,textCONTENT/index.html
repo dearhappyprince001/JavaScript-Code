@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>WELCOME TO MY PAGE</h4>
+    <p id="intro">
+      This is a simple document
+      <strong style="display: none">with some text</strong>and a few elements
+    </p>
+
+    <script>
+      const data = document.getElementById("intro");
+      console.log(`innerHtml:${data.innerHTML}`);
+      console.log(`innerText:${data.innerText}`);
+      console.log(`textContent:${data.textContent}`);
+    </script>
+
+    <!-- Note: innerHTML returns the visible content as well as hidden content,along
+    with HTML tags. innerText returns only the visible content and ignoring the
+    hidden content. textContent returns the complete content including visible
+    as well as hidden but ignoring HTML tags. -->
+  </body>
+</html>

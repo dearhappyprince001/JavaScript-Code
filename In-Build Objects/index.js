@@ -14,6 +14,10 @@ console.log(Math.PI); //print PI value.
 
 console.log(Math.max(10, 90, 100, 30, 78)); //print max num.
 
+console.log(Math.max()); //-Infinity.
+
+console.log(Math.min()); //Infinity.
+
 console.log(Math.min(9, 12, 34, 56)); //print min num.
 
 console.log(Math.round(1.8)); //round-off.
@@ -26,11 +30,15 @@ console.log(Math.abs(5)); //absolute value or its convert negative values into p
 
 console.log(Math.abs(-3)); //convert negative values to positive value.
 
+console.log(Math.abs(-10)); //convert negative values to positive values.
+
 console.log(Math.random()); //it provides a random no between 0 and 1.
 
 console.log(Math.sqrt(5)); //square-root.
 
 console.log(Math.pow(2, 5)); //power.
+console.log("\n");
+console.log("\n");
 
 //Date Object.
 
@@ -69,6 +77,9 @@ console.log(currentDate.toLocaleString()); //it prints the date and time in loca
 console.log(currentDate.toUTCString()); //it prints the date in UTC format.
 console.log(currentDate.toString()); //it prints the date in string format.
 console.log(currentDate.toDateString()); //it prints the date in string format.
+
+console.log("\n");
+console.log("\n");
 
 let date = new Date("september 16 2003 07:15");
 console.log(date);

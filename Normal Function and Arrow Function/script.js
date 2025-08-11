@@ -12,7 +12,7 @@ const obj = {
   },
 
   normalGreet: function () {
-    console.log(`Normal: Hello,${this.name}`); //in case of normal function (this) is dynamic.mtlb ye jis object ke adar refer kiya hai ye usko hi refer krega.
+    console.log(`Normal: Hello,${this.name}`); //in case of normal function or regular function (this) is dynamic.mtlb ye jis object ke adar define kiya hai ye usko hi refer krega.
   },
 };
 

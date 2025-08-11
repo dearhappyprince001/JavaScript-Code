@@ -11,11 +11,11 @@ const companies = [
 ]; // Array of objects
 
 //firstly apply normal for loop to iterate through the array of objects
-for (let i = 0; i < companies.length; i++) {
-  console.log(companies[i]); // Accessing each object in the array
-  console.log("\n");
-  console.log(companies[i].name); // Accessing the name property of each object
-}
+// for (let i = 0; i < companies.length; i++) {
+//   console.log(companies[i]); // Accessing each object in the array
+//   console.log("\n");
+//   console.log(companies[i].name); // Accessing the name property of each object
+// }
 
 // Using forEach to iterate through the array of objects
 companies.forEach((company) => {
