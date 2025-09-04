@@ -1,5 +1,5 @@
 // //--------------->Event Bubbling Example.
-////it occurs from child to parent.
+////it occurs from child to parent,means bottom to top.
 // //it is the default behavior of events in the DOM.
 // // In this example, when the button is clicked, the event bubbles up to the div
 
@@ -9,7 +9,6 @@
 // div.addEventListener("click", () => {
 //   console.log("Div clicked");
 // });
-
 // button.addEventListener("click", () => {
 //   console.log("Button clicked");
 // });
@@ -41,17 +40,17 @@
 //------------->Stop Propagation Example.
 // In this example, we prevent the event from bubbling up to the div when the button is clicked.
 
-var div = document.querySelector("div");
-var button = document.querySelector("button");
+// var div = document.querySelector("div");
+// var button = document.querySelector("button");
 
-div.addEventListener("click", () => {
-  console.log("Div clicked");
-});
+// div.addEventListener("click", () => {
+//   console.log("Div clicked");
+// });
 
-button.addEventListener("click", (event) => {
-  event.stopPropagation(); // Prevents the event from bubbling up to the div
-  console.log("Button clicked");
-});
+// button.addEventListener("click", (event) => {
+//   event.stopPropagation(); // Prevents the event from bubbling up to the div
+//   console.log("Button clicked");
+// });
 
 //-------------->Immediate Propagation Example.
 //if you have multiple event listeners on the same element,
@@ -73,8 +72,8 @@ button.addEventListener("click", (event) => {
 // The preventDefault method is used to prevent the default action of an event.
 //it helps from refreshing the page when a link is clicked.
 
-// var a = document.querySelector("a");
-// a.addEventListener("click", (event) => {
-//   event.preventDefault(); // Prevents the default action of the link
-//   console.log("Link clicked, but default action prevented"); //ye logic chlega lekin page refresh nahi hoga
-// });
+var a = document.querySelector("a");
+a.addEventListener("click", (event) => {
+  event.preventDefault(); // Prevents the default action of the link
+  console.log("Link clicked, but default action prevented"); //ye logic chlega lekin page refresh nahi hoga
+});

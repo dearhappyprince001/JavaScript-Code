@@ -52,7 +52,7 @@ do {
   i++; //updation.
 } while (i <= 5);
 
-//------------------------------->for in loop
+//------------------------------->for in loop----> is used with Objects only
 
 let person = {
   firstName: "happy",
@@ -61,7 +61,7 @@ let person = {
   country: "india",
   gender: "Male",
 };
-//for in loop is used to iterate over the properties of an object.
+
 for (let key in person) {
   console.log(person[key]);
 }
@@ -72,7 +72,8 @@ for (let entries in person) {
   console.log(person[entries]);
 }
 
-//-------------------------------->for of loop.
+//-------------------------------->for of loop---> is used with array,string,set,map,etc. jo iterable hote hai unke sath use hota hai.
+
 
 const arr = [1, 2, 3, 4, 5]; //with array.
 for (const iterator of arr) {
