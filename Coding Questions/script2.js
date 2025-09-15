@@ -678,3 +678,30 @@ const { y = 2 } = { y: null };
 //Note:Default value is only used when the value is undefined not in case of null.
 console.log(x); //1
 console.log(y); //null
+
+//-----------> How to empty an array in JS.
+
+//1st way.
+let arr = [1, 2, 3, 4, 5];
+arr.length = 0;
+console.log(arr); //[]
+
+//2nd way.
+arr = [];
+console.log(arr); //[]
+
+//3rd way.
+arr.splice(0, arr.length); //0 is starting index value.
+console.log(arr); //[]
+
+//----------------->How to create infinite loop in JS.
+
+//1st way ----> using while loop.
+// while (true) {
+//   console.log("This will run forever");
+// }
+
+//2nd way ---->Empty for loop.
+// for (;;) {
+//   console.log("This will also runs forever");
+// }
